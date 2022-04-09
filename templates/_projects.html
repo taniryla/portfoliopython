@@ -1,0 +1,84 @@
+
+<div class='container-fluid section projects_section'>
+	<h2 id='projects'>Projects</h2>
+	<div class='row'>
+
+		{% macro create_project(project_id, modal_id, title, subtitle) %}
+			<div class='col-6 col-sm-4 col-md-3'>
+				<div class='project' id={{project_id}}>
+					<button class='project_content' type='button' data-toggle='modal' data-target={{modal_id}}>
+						<div class='table'>
+							<div class='table-cell'>
+								<p>{{title}}</p>
+								<p style='margin-bottom: 0'>{{subtitle}}</p>
+							</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		{% endmacro %}
+
+		{% set MSc_Diss = [
+			'project_MSc_Diss',
+			'#modal_MSc_Diss',
+			'Profiling Gene Expression in the Brain for Insight into Neurological Disease',
+			'MSc. Dissertation, UoE'
+		] %}
+
+		{% set IRR = [
+			'project_IRR',
+			'#modal_IRR',
+			'PU Learning and other ML Methods for Disease Gene Identification',
+			'Informatics Research Review, UoE'
+		] %}
+
+		{% set MLP = [
+			'project_MLP',
+			'#modal_MLP',
+			'Colouring black and white images using conditional Generative Adversarial Networks',
+			'MLP course, UoE'
+		] %}
+
+		{% set twttr = [
+			'project_twttr',
+			'#modal_twttr',
+			'Optimising Product Placement for Mexican Twitter Users',
+			'Consultancy project, Sinnia'
+		] %}
+
+		{% set trump_hillary = [
+			'project_trump_hillary',
+			'#modal_trump_hillary',
+			'USA Presidential candidate\'s language analysis in social media',
+			'Sinnia'
+		] %}
+
+		{% set PULearning = [
+			'project_PULearning',
+			'#modal_PULearning',
+			'PU Learning: Supervised learning with an unobserved class',
+			'Laberintos e Infinitos article, ITAM'
+		] %}
+
+		{% set Aalto = [
+			'project_Aalto',
+			'#modal_Aalto',
+			'Analysis and Modelling of Neural Patterns Underlying Brain Activity Response',
+			'Brain Research Unit, Aalto University'
+		] %}
+
+		{% set tesis = [
+			'project_tesis',
+			'#modal_tesis',
+			'The Ellipsoidal Method and other Classification Methods',
+			'BSc. Dissertation, ITAM'
+		] %}
+
+		{% set list_projects = [ MSc_Diss, IRR, MLP, twttr, trump_hillary, PULearning, Aalto, tesis ] %}
+
+		{% for project_id, modal_id, title, subtitle in list_projects %}
+			{{ create_project( project_id, modal_id, title, subtitle ) }}
+		{% endfor %}
+
+	</div>
+</div>

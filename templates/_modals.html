@@ -1,0 +1,147 @@
+
+{% macro create_modal(id, title, subtitle, text, git_bool, git, pdf_1_bool, pdf_1, pdf_2_bool, pdf_2, img_1_bool, img_1, img_2_bool, img_2, article_bool, article) %}
+<div class='modal fade' id={{id}}>
+  <div class='modal-dialog modal-dialog-centered'>
+    <div class='modal-content'>
+      <div class='modal-body'>
+        <button type='button' class='close' data-dismiss='modal'>&times;</button>
+        <h3>{{title}}</h3>
+        <p class='modal-subtitle'>{{subtitle}}</p>
+        <div class='modal-body-text'>
+          <p>{{text}}</p>
+          <div class='modal_icons'>
+            {% if( git_bool ) %}
+              <a href={{git}} target='_blank' title='Project repository'><i class='fab fa-github'></i></a>
+            {% endif %}
+            {% if ( pdf_1_bool ) %}
+              <a href={{pdf_1}} target='_blank' title='PDF file of Interim Report'><i class='fas fa-file-pdf'></i></a>
+            {% endif %}
+            {% if ( pdf_2_bool ) %}
+              <a href={{pdf_2}} target='_blank' title='PDF file'><i class='fas fa-file-pdf'></i></a>
+            {% endif %}
+            {% if ( img_1_bool ) %}
+              <a href={{img_1}} target='_blank' title="Hillary Clinton's Network"><i class='fas fa-file-image'></i></a>
+            {% endif %}
+            {% if ( img_2_bool ) %}
+              <a href={{img_2}} target='_blank' title="Donald Trump's Network"><i class='fas fa-file-image'></i></a>
+            {% endif %}
+            {% if ( article_bool ) %}
+              <a href={{article}} target='_blank' title='Original article (in Spanish)'><i class='far fa-newspaper'></i></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{% set modal_MSc_Diss = [
+  'modal_MSc_Diss',
+  'Profiling Gene Expression in the Brain for Insight into Neurological Disease',
+  'MSc. Dissertation, UoE',
+  'Study of two gene expression databases with different analytical tools to find underlying structures that provide insights into the genetic variations of Autism Spectrum Disorders and ageing. Groups of relevant genes were identified using differential expression analysis as well as module detection in correlation networks, the results were interpreted using enrichment analysis and tested for relevance by contrasting them to known human genes associated to autism.',
+  True, 'https://github.com/magdalena90/MScDissertation',
+  False, '',
+  True, 'https://drive.google.com/file/d/1T-j6AGh8ri3OqqkwcofFZ9QnvJD7b2iW/view?usp=sharing',
+  False, '',
+  False, '',
+  False, ''
+] %}
+
+{% set modal_IRR = [
+  'modal_IRR',
+  'PU Learning and other Machine Learning Methods for Disease Gene Identification',
+  'Informatics Research Review, UoE',
+  'This review presents an overview from the machine learning perspective of the problem of identifying disease-related genes, examining some state-of-the-art methods, comparing their strengths and weaknesses, and focusing on the Positive-Unlabelled Learning for Disease Identification (PUDI) algorithm, studying the origins of the PU Learning branch of Machine Learning, some of its most popular algorithms and its incursion into the Bioinformatics field.',
+  False, '',
+  False, '',
+  True, 'https://drive.google.com/file/d/1To3Hlu87m61f6VtZw_ZxMda3OSnmytFR/view?usp=sharing',
+  False, '',
+  False, '',
+  False, ''
+] %}
+
+{% set modal_MLP = [
+  'modal_MLP',
+  'Colouring black and white images using conditional Generative Adversarial Networks',
+  'MLP course, UoE',
+  'Study of conditional Generative Adversarial Networks (cGANs) and their applications as a photograph colouring technique as well as proposing an improvement to the algorithm based on the idea "divide and conquer", where individual colouring models are trained for specific categorised data, not only reducing considerably the training time of the model, but also outperforming the original model.',
+  True, 'https://github.com/magdalena90/MLP_project',
+  True, 'https://drive.google.com/file/d/161qyN3NLpnALlIme80IHfuQUm5hSiGT0/view?usp=sharing',
+  True, 'https://drive.google.com/file/d/1Q6pRif8Faa3yrR3LnsUROluEarAgKnsu/view?usp=sharing',
+  False, '',
+  False, '',
+  False, ''
+] %}
+
+{% set modal_twttr = [
+  'modal_twttr',
+  'Optimising Product Placement for Mexican Twitter Users',
+  'Consultancy Project for Twitter Mexico, Sinnia',
+  'Analysis of social media activity data for different demographic groups on Twitter to generate statistical scores and network models that help visualise and quantify the reach of given influencers or brands to each of these groups, which twill allow to reach in a more efficient way specific target groups. The code and the data from this project are not public.',
+  False, '',
+  False, '',
+  False, '',
+  False, '',
+  False, '',
+  False, ''
+] %}
+
+{% set modal_trump_hillary = [
+  'modal_trump_hillary',
+  "USA Presidential candidates' language analysis in social media",
+  'Sinnia',
+  "Analysis of the language used by Donald Trump and Hillary Clinton in their Twitter accounts during the United State's presidential campaign, modelling the conversation as a network using their words as building blocks, connecting concepts when used together, clustering the conversation by topics according to these relations and creating a visualisation of the network using Gephi.",
+  False, '',
+  False, '',
+  False, '',
+  True, 'https://drive.google.com/file/d/0Bw0MgJ465IYtY3ZBaHA0M1QyTkIwSmVyS3ZGUWptNVBTRHpB/view?usp=sharing',
+  True, 'https://drive.google.com/file/d/0Bw0MgJ465IYtN05PR0lFNDFPLUZMdzNFZG5oVGFOTkhmMkRJ/view?usp=sharing',
+  False, ''
+] %}
+
+{% set modal_PULearning = [
+  'modal_PULearning',
+  'PU Learning: Supervised learning with an unobserved class',
+  'Laberintos e Infinitos article, ITAM',
+  "Article published in the Laberintos e Infinitos magazine where the theory behind Positive-Unlabelled Learning and Support Vector Machines is reviewed to study the PU Learning algorithm Biased Support Vector Machines. This algorithm is implemented and applied to a wine classification problem where the quality of the wine is inferred by its chemical properties but only 'good' wines are labelled.",
+  True, 'https://github.com/nestorSag/PU-learning-project',
+  False, '',
+  True, 'https://drive.google.com/file/d/1LR0OK-nUf35csXoORbWYbAid-cWq0PpG/view?usp=sharing',
+  False, '',
+  False, '',
+  True, 'http://laberintos.itam.mx/wp/wp-content/uploads/2017/02/N38.pdf'
+] %}
+
+{% set modal_Aalto = [
+  'modal_Aalto',
+  'Analysis and Modelling of Neural Patterns Underlying Brain Activity Response',
+  'Brain Research Unit, Aalto University',
+  'Adaptation of the algorithm proposed in Temporal Collaborative Filtering with Bayesian Probabilistic Tensor Factorization by Liang Xong et al, to an MEG study in order to infer hidden patterns underlying brain activity responses and extract structure from groups of concepts. The code and the data from this project belong to Aalto University.',
+  False, '',
+  False, '',
+  False, '',
+  False, '',
+  False, '',
+  False, '',
+] %}
+
+{% set modal_tesis = [
+  'modal_tesis',
+  'The Ellipsoidal Method and other Classification Methods',
+  'BSc. Dissertation, ITAM',
+  'Review and implementation of a numerical optimization algorithm to find the John-Löwner Ellipsoid (the ellipsoid with the minimum volume that contains a set of points), adapting it to perform classification tasks, and applying it to classify daily bonds by year based on their interest rate, comparing its performance with seven of the most popular Machine Learning classification methods. NOTE: The document is in Spanish.',
+  True, 'https://github.com/magdalena90/Tesis',
+  False, '',
+  True, 'https://drive.google.com/file/d/1ywqXWqMtTJf-RmVTBi-pcwduuDOuvBep/view?usp=sharing',
+  False, '',
+  False, '',
+  False, '',
+] %}
+
+{% set list_modals = [ modal_MSc_Diss, modal_IRR, modal_MLP, modal_twttr, modal_trump_hillary, modal_PULearning, modal_Aalto, modal_tesis ] %}
+
+{% for id, title, subtitle, text, git_bool, git, pdf_1_bool, pdf_1, pdf_2_bool, pdf_2, img_1_bool, img_1, img_2_bool, img_2, article_bool, article in list_modals %}
+  {{ create_modal( id, title, subtitle, text, git_bool, git, pdf_1_bool, pdf_1, pdf_2_bool, pdf_2, img_1_bool, img_1, img_2_bool, img_2, article_bool, article ) }}
+{% endfor %}

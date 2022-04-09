@@ -1,0 +1,71 @@
+
+<div class='container-fluid section certificates_section'>
+	<h2 id='certificates'>Certificates</h2>
+	
+	<div class='row'>
+
+		{% macro create_certificate(id, url, title, subtitle) %}
+			<div class='col-6 col-sm-4 col-md-3'>
+				<div class='certificate' id={{id}}>
+					<a class='certificate_content' href={{url}} target='_blank'>
+						<div class='table'>
+							<div class='table-cell'>
+								<p>{{title}}</p>
+								<p style='margin-bottom: 0'>{{subtitle}}</p>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		{% endmacro %}
+
+		{% set DNASeq = [
+			'certificate_DNASeq',
+			'https://drive.google.com/file/d/1MnW1hHIC_SbPtOOiF0y_hrDUROFVOLDt/view?usp=sharing',
+			'Algorithms for DNA Sequencing',
+			'JHU via Coursera'
+		] %}
+
+		{% set scalableML = [
+			'certificate_scalableML',
+			'https://drive.google.com/file/d/18a51rmZ_OtVW8_XQjAgXokGK8OsF0tYN/view?usp=sharing',
+			'Scalable Machine Learning',
+			'Berkeley via Edx'
+		] %}
+
+		{% set introBigData = [
+			'certificate_introBigData',
+			'https://drive.google.com/file/d/15Jaz589r8eV9Ii2W7e790T5QdkNzNYf0/view?usp=sharing',
+			'Introduction to Big Data with Apache Spark',
+			'Berkeley via Edx'
+		] %}
+
+		{% set ML = [
+			'certificate_ML',
+			'https://drive.google.com/file/d/1iBCbjKbRdBSD4WR7hoauQKLM6CeFpUpx/view?usp=sharing',
+			'Machine Learning',
+			'Stanford via Coursera'
+		] %}
+
+		{% set dataAnalysis = [
+			'certificate_dataAnalysis',
+			'https://drive.google.com/file/d/1hjPTxsGp3_v8FW0K69hj50LdOJTFGgys/view?usp=sharing',
+			'Data Analysis',
+			'JHU via Coursera'
+		] %}
+
+		{% set computing4DA = [
+			'certificate_computing4DA',
+			'https://drive.google.com/file/d/12QRhEUfOEwRNGe9EUv5p4DttodSZ5FB1/view?usp=sharing',
+			'Computing for Data Analysis',
+			'JHU via Coursera'
+		] %}
+
+		{% set list_certificates = [ DNASeq, scalableML, introBigData, ML, dataAnalysis, computing4DA ] %}
+
+		{% for id, url, title, subtitle in list_certificates %}
+			{{ create_certificate( id, url, title, subtitle ) }}			
+		{% endfor %}
+
+	</div>
+</div>
